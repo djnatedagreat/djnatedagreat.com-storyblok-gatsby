@@ -2,6 +2,7 @@ import React from 'react'
 import Components from '../components/components.js'
 import SbEditable from 'storyblok-react'
 import config from '../../gatsby-config'
+import Menu from '../components/menu.js'
 
 const loadStoryblokBridge = function(cb) {
 	  let sbConfigs = config.plugins.filter((item) => {
@@ -35,21 +36,33 @@ const getParam = function(val) {
 class StoryblokEntry extends React.Component {
 	  constructor(props) {
 		      super(props)
-		      this.state = {story: null}
+		      this.state = {story: null, globalMenu: {content: {}}}
 		    }
 
 	  componentDidMount() {
 		      loadStoryblokBridge(() => { this.initStoryblokEvents() })
 		    }
 
-	  loadStory(payload) {
-		      window.storyblok.get({
-			            slug: getParam('path'),
-			            version: 'draft'
-			          }, (data) => {
-					        this.setState({story: data.story})
-					      })
-		    }
+	loadStory(payload) {
+	      window.storyblok.get({
+	            slug: getParam('path'),
+	            version: 'draft'
+	      }, (data) => {
+	  	this.loadGlovalMenu(data.story.lang)
+	        this.setState({story: data.story})
+	     })
+  	}
+
+	loadGlovalMenu(lang) {
+		    const language = lang === 'default' ? '' : lang + '/'
+		    window.storyblok.get({
+			          slug: `${language}main-menu`, 
+			          version: 'draft'
+		    }, (data) => {
+		      this.setState({globalMenu: data.story})
+		   })
+       }
+
 
 	  initStoryblokEvents() {
 		      this.loadStory({storyId: getParam('path')})
@@ -79,11 +92,14 @@ class StoryblokEntry extends React.Component {
 			            return (<div></div>)
 			          }
 
+		  console.log(this.state);
 		      let content = this.state.story.content
+		      let globalMenu = this.state.globalMenu.content
 
 		      return (
 			            <SbEditable content={content}>
 			            <div>
+			      	      <Menu blok={globalMenu}></Menu>
 			              {React.createElement(Components(content.component), {key: content._uid, blok: content})}
 			            </div>
 			            </SbEditable>

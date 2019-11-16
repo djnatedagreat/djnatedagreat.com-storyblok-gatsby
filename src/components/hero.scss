@@ -1,9 +1,14 @@
 html {
-  h1 {
+  .hero {
+   h1 {
     &.brand-font {
       font-family: 'Rock Salt', cursive; 
       color: white;
-      font-size: 2.5vw;
+      /*font-size: 2.5vw;*/
     }
    }
+   .lead {
+     color: white;
+   }
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Components from '../components/components.js'
+import Menu from '../components/menu.js'
 
 class StoryblokEntry extends React.Component {
   static getDerivedStateFromProps(props, state) {
@@ -12,9 +13,11 @@ class StoryblokEntry extends React.Component {
 
   static prepareStory(props) {
       const story = Object.assign({}, props.pageContext.story)
+	  const globalMenu = Object.assign({}, props.pageContext.globalMenu)
 	      story.content = JSON.parse(story.content)
+	      globalMenu.content = JSON.parse(globalMenu.content)
 	      
-	      return { story }
+	      return { story, globalMenu }
     }
 
   constructor(props) {
@@ -24,9 +27,11 @@ class StoryblokEntry extends React.Component {
 
   render() {
       let content = this.state.story.content
+      let globalMenu = this.state.globalMenu.content
 
       return (
             <div>
+	      <Menu blok={globalMenu}></Menu>
               {React.createElement(Components(content.component), {key: content._uid, blok: content})}
             </div>
       )

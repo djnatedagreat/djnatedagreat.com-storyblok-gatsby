@@ -4,7 +4,7 @@ import SbEditable from 'storyblok-react'
 import styled from "styled-components"
 
 const Jumbotron = styled.div.attrs(props => ({
-  class: "jumbotron jumbotron-fluid"
+  className: "jumbotron jumbotron-fluid"
 }))`
 	background-image: url( ${props => props.media ? props.media : "none" } );
 	height: ${props => props.type == 'home' ? "100vh" : "inherit"};
@@ -18,7 +18,7 @@ const Jumbotron = styled.div.attrs(props => ({
 const Feature = (props) => {
 	return (
 	  <SbEditable content={props.blok}>
-	    <Jumbotron media={props.blok.media} type={props.blok.type} background_color={props.blok.background_color}>
+	    <Jumbotron className="m-0" media={props.blok.media} type={props.blok.type} background_color={props.blok.background_color}>
 	      <div className="container">
 		<div className="row">
 	    	<div className="col-6">
@@ -27,8 +27,8 @@ const Feature = (props) => {
 	    	</div>
 	    	<div className="col-6">
 		{ props.blok.video &&
-		  <div class="embed-responsive embed-responsive-16by9">
-		    <iframe src={props.blok.video} class="embed-responsive-item" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		  <div className="embed-responsive embed-responsive-16by9">
+		    <iframe src={props.blok.video} className="embed-responsive-item" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
 		  </div>
 		}
 	    	</div>

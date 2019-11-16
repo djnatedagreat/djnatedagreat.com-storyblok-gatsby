@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
 		                created_at
 		                uuid
 		                slug
+				field_component
 		                full_slug
 		                content
 		                is_startpage
@@ -40,17 +41,27 @@ exports.createPages = ({ graphql, actions }) => {
 	          }
 
 	          const entries = result.data.allStoryblokEntry.edges
+		  const contents = entries.filter((entry) => {
+		      return entry.node.field_component != 'menu'
+	          })
 	          entries.forEach((entry, index) => {
-	            let pagePath = entry.node.full_slug == 'home' ? '' : `${entry.node.full_slug}/`
+	             let pagePath = entry.node.full_slug == 'home' ? '' : `${entry.node.full_slug}/`
+		     const globalMenu = entries.filter((globalEntry) => {
+		    	return globalEntry.node.field_component == 'menu' && globalEntry.node.lang == entry.node.lang
+		     })
+		     if (!globalMenu.length) {
+		        throw new Error('The global Menu item has not been found. Please create a content item with the content type menu in Storyblok.')
+		     }
 
 	            createPage({
 	                path: `/${pagePath}`,
 	                component: storyblokEntry,
 	                context: {
-		              story: entry.node
+			    globalMenu: globalMenu[0].node,
+		            story: entry.node
    	                }
 		    })
-          })
+                 })
         })
        )
     })

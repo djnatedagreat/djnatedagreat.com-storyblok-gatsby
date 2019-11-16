@@ -1,0 +1,17 @@
+$body-color: #333;
+$body-bg: #f8f8f8;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+footer {
+  text-align: center;
+  padding: 2em;
+  border-top: solid 1px $body-color;
+}
+
+#main-menu.navbar {
+  opacity: .8;
+  .nav-item .nav-link {
+    color: #000;
+  }
+}
