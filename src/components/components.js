@@ -7,6 +7,7 @@ import Menu from './menu'
 import MenuItem from './menu_item'
 import GenericContent from './generic_content'
 import ContactForm from './forms/contact'
+import SubscribeForm from './subscribe_form'
 import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
@@ -18,7 +19,8 @@ const ComponentList = {
 	  menu: Menu,
 	  menu_item: MenuItem,
 	  contact_form: ContactForm,
-	  generic_content: GenericContent
+	  generic_content: GenericContent,
+	  subscribe_form: SubscribeForm
 }
 
 const Components = (type) => {

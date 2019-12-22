@@ -21,6 +21,7 @@
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.2.14",
     "jquery": "^3.4.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "popper.js": "^1.16.0",
     "prop-types": "^15.7.2",
@@ -30,7 +31,8 @@
     "react-helmet": "^5.2.1",
     "react-markdown": "^4.2.2",
     "storyblok-react": "0.0.9",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "universal-cookie": "^4.0.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

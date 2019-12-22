@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import SbEditable from 'storyblok-react'
 const ReactMarkdown = require('react-markdown')
 

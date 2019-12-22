@@ -20,8 +20,8 @@ const Hero = (props) => {
 	  <SbEditable content={props.blok}>
 	    <Jumbotron className="m-0" media={props.blok.media} type={props.blok.type}>
 	      <div className="container">
-	      	<div class="row">
-	      		<div class="col-sm-5 text-center">
+	      	<div className="row">
+	      		<div className="col-sm-5 text-center">
       				{ props.blok.type == 'home' && props.blok.title &&
 				           <h1 className="display-5 brand-font">{ props.blok.title }</h1>
 					}
