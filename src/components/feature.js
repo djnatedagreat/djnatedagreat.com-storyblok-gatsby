@@ -21,7 +21,7 @@ const Feature = (props) => {
 	    <Jumbotron className="m-0" media={props.blok.media} type={props.blok.type} background_color={props.blok.background_color}>
 	      <div className="container">
 		<div className="row">
-	    	<div className="col-6">
+	    	<div className="col-12 col-md-6">
 	      		<h2>{props.blok.name}</h2>
 	      		<p>{props.blok.text}</p>
 	    	</div>
