@@ -25,7 +25,7 @@ const Feature = (props) => {
 	      		<h2>{props.blok.name}</h2>
 	      		<p>{props.blok.text}</p>
 	    	</div>
-	    	<div className="col-6">
+	    	<div className="col-12 col-md-6">
 		{ props.blok.video &&
 		  <div className="embed-responsive embed-responsive-16by9">
 		    <iframe src={props.blok.video} className="embed-responsive-item" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
