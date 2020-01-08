@@ -1,6 +1,7 @@
 import React from 'react'
 import Components from './components.js';
 import SubscribeWidget from './subscribe_widget.js';
+import { Helmet } from "react-helmet"
 
 class Page extends React.Component {                                                                             
    constructor(props) {
@@ -10,6 +11,10 @@ class Page extends React.Component {
   render() {
     return(
 	  <div>
+	  <Helmet>
+          <meta charSet="utf-8" />
+          <title>{this.props.blok.page_title}</title>
+      </Helmet>
 	    {this.props.blok.body && this.props.blok.body.map((blok) => React.createElement(Components(blok.component), {key: blok._uid, blok: blok}))}
 	  <footer>
 		DJ Nate Da Great<br/>
