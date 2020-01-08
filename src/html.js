@@ -8,9 +8,9 @@ export default class HTML extends React.Component {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 {this.props.headComponents}
-	      	<link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet" />
+	      	      <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet" />
               </head>
-              <body>
+              <body>  
                 <div
                   id="___gatsby"
                   dangerouslySetInnerHTML={{ __html: this.props.body }}

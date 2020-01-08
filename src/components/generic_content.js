@@ -6,7 +6,7 @@ const ReactMarkdown = require('react-markdown')
 const GenericContent = (props) => {
 	return (
 	  <SbEditable content={props.blok}>
-	      <div className="container pt-4">
+	    <div className="container pt-4">
 		<div className="row">
 	    	<div className="col-12">
 		<ReactMarkdown source={props.blok.content} />

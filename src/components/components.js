@@ -8,6 +8,7 @@ import MenuItem from './menu_item'
 import GenericContent from './generic_content'
 import ContactForm from './forms/contact'
 import SubscribeForm from './subscribe_form'
+import SpotifyPlaylist from './spotify_playlist'
 import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
@@ -20,6 +21,7 @@ const ComponentList = {
 	  menu_item: MenuItem,
 	  contact_form: ContactForm,
 	  generic_content: GenericContent,
+	  spotify_playlist: SpotifyPlaylist,
 	  subscribe_form: SubscribeForm
 }
 
