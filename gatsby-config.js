@@ -13,6 +13,7 @@ module.exports = {
         precision: 6,
       },
     },
+    `gatsby-plugin-favicon`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
