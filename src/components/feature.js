@@ -22,7 +22,7 @@ const Feature = (props) => {
 	      <div className="container">
 		<div className="row">
 	    	<div className="col-12 col-md-6">
-	      		<h2>{props.blok.name}</h2>
+	      		<h1 className="h2">{props.blok.name}</h1>
 	      		<p>{props.blok.text}</p>
 	    	</div>
 	    	<div className="col-12 col-md-6">

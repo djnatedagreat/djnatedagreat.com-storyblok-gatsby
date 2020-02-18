@@ -8,10 +8,10 @@ const Jumbotron = styled.div.attrs(props => ({
   className: "hero hero__Jumbotron jumbotron jumbotron-fluid"
 }))`
 	background-image: url( ${props => props.media} );
-	height: ${props => props.type == 'home' ? "100vh" : "inherit"};
-	background-position: center;
+	height: ${props => props.type == 'home' ? "95vh" : "inherit"};
+	background-position: center 0;
 	background-size: cover;
-	padding-top: 15vh;
+	/*padding-top: 15vh;*/
 	color: #fff;
 `;
 

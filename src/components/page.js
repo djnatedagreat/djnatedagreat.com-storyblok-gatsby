@@ -1,10 +1,18 @@
 import React from 'react'
 import Components from './components.js';
 import SubscribeWidget from './subscribe_widget.js';
+import Menu from '../components/menu.js'
 import { Helmet } from "react-helmet"
+import Footer from './footer.js'
 
 class Page extends React.Component {                                                                             
    constructor(props) {
+   	//console.log(props.pageContext);
+   	//var globalMenu = Object.assign({}, props.pageContext.globalMenu)
+	//globalMenu.content = JSON.parse(globalMenu.content)
+	//this.state = {
+	//				globalMenu : globalMenu
+    //   		 	};
 	super(props);
    }
 
@@ -15,13 +23,9 @@ class Page extends React.Component {
           <meta charSet="utf-8" />
           <title>{this.props.blok.page_title}</title>
       </Helmet>
+      <Menu blok={this.props.globalMenu} fixed="no"></Menu>
 	    {this.props.blok.body && this.props.blok.body.map((blok) => React.createElement(Components(blok.component), {key: blok._uid, blok: blok}))}
-	  <footer>
-		DJ Nate Da Great<br/>
-		<a href="https://instagram.com/djnatedagreat" target="djnatedagreat_instagram">Instagram: @djnatedagreat</a><br/>
-		<a href="https://open.spotify.com/user/djnatedagreat" target="djnatedagreat_spotify">Spotify: @djnatedagreat</a><br/>
-		<a href="https://www.mixcloud.com/natedagreat" target="djnatedagreat_mixcloud">Mixcloud</a><br/>
-	  </footer>
+	   <Footer/>
 	   <SubscribeWidget/>
 	</div>
     

@@ -1,6 +1,5 @@
 import React from 'react'
 import Components from '../components/components.js'
-import Menu from '../components/menu.js'
 
 class StoryblokEntry extends React.Component {
   static getDerivedStateFromProps(props, state) {
@@ -28,11 +27,9 @@ class StoryblokEntry extends React.Component {
   render() {
       let content = this.state.story.content
       let globalMenu = this.state.globalMenu.content
-
       return (
             <div>
-	      <Menu blok={globalMenu}></Menu>
-              {React.createElement(Components(content.component), {key: content._uid, blok: content})}
+              {React.createElement(Components(content.component), {key: content._uid, blok: content, globalMenu: globalMenu})}
             </div>
       )
     }

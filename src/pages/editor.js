@@ -19,7 +19,7 @@ const loadStoryblokBridge = function(cb) {
 const getParam = function(val) {
 	  var result = ''
 	  var tmp = []
-
+	  if (typeof window !== 'undefined') {
 	  window.location.search
 	    .substr(1)
 	    .split('&')
@@ -29,7 +29,7 @@ const getParam = function(val) {
 				          result = decodeURIComponent(tmp[1])
 				        }
 		        })
-
+	  }
 	  return result
 }
 
@@ -44,23 +44,27 @@ class StoryblokEntry extends React.Component {
 		    }
 
 	loadStory(payload) {
+	      if (typeof window !== 'undefined') {
 	      window.storyblok.get({
 	            slug: getParam('path'),
 	            version: 'draft'
 	      }, (data) => {
-	  	this.loadGlovalMenu(data.story.lang)
+	  		this.loadGlovalMenu(data.story.lang)
 	        this.setState({story: data.story})
 	     })
+	  	}
   	}
 
 	loadGlovalMenu(lang) {
-		    const language = lang === 'default' ? '' : lang + '/'
+		    const language = lang === 'default' ? '' : lang + '/';
+		    if (typeof window !== 'undefined') {
 		    window.storyblok.get({
 			          slug: `${language}main-menu`, 
 			          version: 'draft'
 		    }, (data) => {
 		      this.setState({globalMenu: data.story})
 		   })
+			}
        }
 
 

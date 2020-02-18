@@ -1,4 +1,5 @@
 import Page from './page'
+import Post from './post'
 import Grid from './grid'
 import Teaser from './teaser'
 import Hero from './hero'
@@ -13,6 +14,7 @@ import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
 	  page: Page,
+	  post: Post,
 	  grid: Grid,
 	  teaser: Teaser,
 	  feature: Feature,

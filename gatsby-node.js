@@ -11,10 +11,10 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-      const storyblokEntry = path.resolve('src/templates/storyblok-entry.js')
+    const storyblokEntry = path.resolve('src/templates/storyblok-entry.js')
 
-      resolve(
-         graphql(
+    resolve(
+        graphql(
             `{
               allStoryblokEntry {
                   edges {
@@ -34,34 +34,41 @@ exports.createPages = ({ graphql, actions }) => {
 	              }
                 }
             }`
-          ).then(result => {
-	          if (result.errors) {
-		            console.log(result.errors)
-		            reject(result.errors)
-	          }
+        ).then(result => {
+	        if (result.errors) {
+		        console.log(result.errors)
+		        reject(result.errors)
+	        }
 
-	          const entries = result.data.allStoryblokEntry.edges
-		  const contents = entries.filter((entry) => {
-		      return entry.node.field_component != 'menu'
-	          })
-	          entries.forEach((entry, index) => {
-	             let pagePath = entry.node.full_slug == 'home' ? '' : `${entry.node.full_slug}/`
-		     const globalMenu = entries.filter((globalEntry) => {
-		    	return globalEntry.node.field_component == 'menu' && globalEntry.node.lang == entry.node.lang
-		     })
-		     if (!globalMenu.length) {
-		        throw new Error('The global Menu item has not been found. Please create a content item with the content type menu in Storyblok.')
-		     }
+	        const entries = result.data.allStoryblokEntry.edges
+		  	const contents = entries.filter((entry) => {
+		    	return entry.node.field_component != 'menu'
+	    	})
 
-	            createPage({
-	                path: `/${pagePath}`,
-	                component: storyblokEntry,
-	                context: {
-			    globalMenu: globalMenu[0].node,
-		            story: entry.node
-   	                }
-		    })
-                 })
+	    	const globalMenu = entries.filter((globalEntry) => {
+			    return globalEntry.node.field_component == 'menu'
+			 })
+
+	    	const posts = entries.filter((entry) => {
+		    	return entry.node.field_component == 'post'
+	    	})
+	        
+	        entries.forEach((entry, index) => {
+	            let pagePath = entry.node.full_slug == 'home' ? '' : `${entry.node.full_slug}/`
+			    
+			    if (!globalMenu.length) {
+			    	throw new Error('The global Menu item has not been found. Please create a content item with the content type menu in Storyblok.')
+			    }
+			     //console.log(entry.node);
+		        createPage({
+		            path: `/${pagePath}`,
+		            component: storyblokEntry,
+		            context: {
+				    	globalMenu: globalMenu[0].node,
+			            story: entry.node
+	   	            }
+			    })
+            })
         })
        )
     })
