@@ -8,7 +8,7 @@ const Teaser = (props) => (
 			<div className="row">
 	    		<div className="col-12">
 	  			<div className="embed-responsive embed-responsive-16by9">
-	  			<iframe src={ props.blok.embed_url } className="embed-responsive-item" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	  			<iframe src={ props.blok.embed_url } className="embed-responsive-item" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 	  			</div>
 	  			</div>
 			</div>

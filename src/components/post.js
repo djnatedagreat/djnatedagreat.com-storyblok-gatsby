@@ -1,7 +1,10 @@
 import React from 'react'
 import Components from './components.js';
 import Menu from '../components/menu.js'
+import Feature from '../components/feature.js'
+import SubscribeWidget from '../components/subscribe_widget.js'
 import { Helmet } from "react-helmet"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import Footer from './footer.js'
 import moment from 'moment';
@@ -28,6 +31,9 @@ class Post extends React.Component {
    }
 
   render() {
+  	let blok = {name: this.props.blok.title, 
+  				text: (this.props.blok.subtitle) || "DJ Nate Da Great's Blog",
+  				background_color: '#702632' };
     return(
 	  <div>
 			<Helmet>
@@ -35,20 +41,17 @@ class Post extends React.Component {
 	          <title>{this.props.blok.page_title}</title>
 			</Helmet>
 			<Menu blok={this.props.globalMenu}></Menu>
-			<Jumbotron className="m-0">
-			<div className="container">
-				<div className="row">
-		    		<div className="col-12 col-md-6">
-		      			<h1 className="h2">{this.props.blok.title}</h1>
-		      			<p>{ (this.props.blok.subtitle) || "DJ Nate Da Great's Blog" }</p>
-		    		</div>
-				</div>
-			</div>
-			</Jumbotron>
+			<Feature blok={blok}></Feature>
 			<div className="container pt-5 pb-5">
 				<div className="row">
 		    		<div className="col-12">
-		      		<p>{this.props.blok.subtitle}</p>
+		    		<nav aria-label="breadcrumb">
+					  <ol className="breadcrumb">
+					  	<li className="breadcrumb-item"><Link to="/">Home</Link></li>
+					    <li className="breadcrumb-item"><Link to="blog">Blog</Link></li>
+					    <li className="breadcrumb-item active" aria-current="page">{this.props.blok.title}</li>
+					  </ol>
+					</nav>
 		      		<p><em>Posted {moment(this.props.blok.date_published).format('MMMM Do YYYY')}</em></p>
 		    		<ReactMarkdown source={this.props.blok.content} />
 		    		</div>
@@ -61,6 +64,7 @@ class Post extends React.Component {
 			</div>
 	    	
 	  <Footer/>
+	  <SubscribeWidget/>
 	</div>
     
     );

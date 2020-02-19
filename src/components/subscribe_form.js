@@ -92,15 +92,15 @@ class SubscribeForm extends React.Component {
 						<form onSubmit={this.submitForm}>
 						  <div className="form-group">
 						    <label for="InputFirstName">First Name *</label>
-						    <input type="text" name="first_name" class="form-control" id="InputFirstName" ref={this.firstNameInput}/>
+						    <input type="text" name="first_name" className="form-control" id="InputFirstName" ref={this.firstNameInput}/>
 						  </div>
 						  <div className="form-group">
 						    <label for="InputFirstName">Last Name</label>
-						    <input type="text" name="last_name" class="form-control" id="InputLastName" ref={this.lastNameInput}/>
+						    <input type="text" name="last_name" className="form-control" id="InputLastName" ref={this.lastNameInput}/>
 						  </div>
 						  <div className="form-group">
 						    <label for="InputEmail1">E-mail address *</label>
-						    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required ref={this.emailInput}/>
+						    <input type="email" className="form-control" id="InputEmail1" aria-describedby="emailHelp" required ref={this.emailInput}/>
 						    <small id="emailHelp" className="form-text text-muted">I don't share your email with anyone else.</small>
 						  </div>
 						  <div className="form-group form-check">

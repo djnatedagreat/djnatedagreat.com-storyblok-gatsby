@@ -2,6 +2,7 @@ import React from 'react'
 import Components from './components.js';
 import SubscribeWidget from './subscribe_widget.js';
 import Menu from '../components/menu.js'
+import Feature from '../components/feature.js'
 import { Helmet } from "react-helmet"
 import Footer from '../components/footer.js'
 import styled from "styled-components"
@@ -28,6 +29,9 @@ class Blog extends React.Component {
    }
 
   render() {
+  	let blok = {name: "DJ Nate Da Great's Blog", 
+  				text: "Music, mixes and musings",
+  				background_color: '#702632' };
     return(
 	  <div>
 			<Helmet>
@@ -35,16 +39,7 @@ class Blog extends React.Component {
 	          <title>DJ Nate Da Great - Blog</title>
 			</Helmet>
 			<Menu blok={this.props.globalMenu}></Menu>
-			<Jumbotron className="m-0">
-			<div className="container">
-				<div className="row">
-		    		<div className="col-12 col-md-6">
-		      			<p className="h2">DJ Nate Da Great's Blog</p>
-		      			<p>Music, mixes and musings</p>
-		    		</div>
-				</div>
-			</div>
-			</Jumbotron>
+			<Feature blok={blok}></Feature>
 			<div className="container pt-4">
 				<div className="row">
 		    		<div className="col-12">
@@ -55,6 +50,7 @@ class Blog extends React.Component {
 				</div>
 			</div>
 	  <Footer/>
+	  <SubscribeWidget/>
 	</div>
     
     );

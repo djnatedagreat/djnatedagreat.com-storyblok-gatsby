@@ -89,7 +89,7 @@ class SubscribeWidget extends React.Component {
 	return (
 		<div>
 		<div className={'card fixed-bottom m-3 rounded bg-light shadow-lg' + (! this.state.displayCard && ' d-none')} style={this.state.cardStyle}>
-			<div class="card-header ">
+			<div className="card-header ">
 				<button type="button" className="close" aria-label="Close" onClick={this.hideWidget}>
 			    	<span aria-hidden="true">&times;</span>
 				</button>
