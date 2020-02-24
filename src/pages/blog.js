@@ -31,7 +31,7 @@ class BlogPage extends React.Component {
 
 	  
 	render(data) {
-		console.log('using the page');
+		
 		let globalMenu = this.props.data.allStoryblokEntry.edges.filter((entry) => {
 			    return entry.node.field_component === 'menu'
 		})

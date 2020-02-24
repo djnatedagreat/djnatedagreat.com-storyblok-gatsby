@@ -55,7 +55,8 @@ exports.createPages = ({ graphql, actions }) => {
 	        
 	        entries.forEach((entry, index) => {
 	            let pagePath = entry.node.full_slug == 'home' ? '' : `${entry.node.full_slug}/`
-			    
+			    //console.log(pagePath);
+			    //console.log(${pagePath});
 			    if (!globalMenu.length) {
 			    	throw new Error('The global Menu item has not been found. Please create a content item with the content type menu in Storyblok.')
 			    }
