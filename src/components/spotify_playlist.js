@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import SbEditable from 'storyblok-react'
 
-const Teaser = (props) => (
+const SpotifyPlaylist = (props) => (
 	<SbEditable content={props.blok}>
 		<div className="container pt-4">
 			<div className="row">
@@ -16,4 +16,4 @@ const Teaser = (props) => (
 	</SbEditable>
 )
 
-export default Teaser
+export default SpotifyPlaylist
