@@ -17,6 +17,7 @@ class BlogPostTeaser extends React.Component {
 				<div className="row">
 		    		<div className="col-12 pl-0 pb-5">
 		      			<h2><Link to={this.props.url}>{this.props.title}</Link></h2>
+		      			<p><strong>{this.props.subtitle}</strong></p>
 		      			<p><em>Posted {moment(this.props.date).format('MMMM Do YYYY')}</em></p>
 		      			<ReactMarkdown source={this.props.teaser} />
 		      			<p><Link to={this.props.url}>Full Post... </Link></p>

@@ -10,6 +10,7 @@ import GenericContent from './generic_content'
 import ContactForm from './forms/contact'
 import SubscribeForm from './subscribe_form'
 import SpotifyPlaylist from './spotify_playlist'
+import DjMix from './dj_mix'
 import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
@@ -24,6 +25,7 @@ const ComponentList = {
 	  contact_form: ContactForm,
 	  generic_content: GenericContent,
 	  spotify_playlist: SpotifyPlaylist,
+	  dj_mix: DjMix,
 	  subscribe_form: SubscribeForm
 }
 

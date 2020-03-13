@@ -44,7 +44,7 @@ class Blog extends React.Component {
 				<div className="row">
 		    		<div className="col-12">
 		      		{this.props.posts.map((item, key) =>
-    				<BlogPostTeaser key={item._uid} title={item.title} date={item.date_published} teaser={item.teaser} url={item.full_slug}/>
+    				<BlogPostTeaser key={item._uid} title={item.title} subtitle={item.subtitle} date={item.date_published} teaser={item.teaser} url={item.full_slug}/>
 					)}
 		    		</div>
 				</div>
