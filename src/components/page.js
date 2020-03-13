@@ -22,12 +22,13 @@ class Page extends React.Component {
 	  <Helmet>
           <meta charSet="utf-8" />
           <title>{this.props.blok.page_title}</title>
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
       </Helmet>
       <Menu blok={this.props.globalMenu} fixed="no"></Menu>
 	    {this.props.blok.body && this.props.blok.body.map((blok) => React.createElement(Components(blok.component), {key: blok._uid, blok: blok}))}
 	   <Footer/>
 	   <SubscribeWidget/>
-	</div>
+	 </div>
     
     );
   }
