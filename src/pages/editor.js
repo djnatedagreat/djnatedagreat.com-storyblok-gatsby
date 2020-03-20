@@ -104,7 +104,7 @@ class StoryblokEntry extends React.Component {
 			            <SbEditable content={content}>
 			            <div>
 			      	      <Menu blok={globalMenu}></Menu>
-			              {React.createElement(Components(content.component), {key: content._uid, blok: content})}
+			              {React.createElement(Components(content.component), {key: content._uid, blok: content, globalMenu: globalMenu})}
 			            </div>
 			            </SbEditable>
 			          )
