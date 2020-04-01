@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `DJ Nate Da Great`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `DJ, turnt-tablist, thinker, maker, coder, etc… Been doing this DJ thing for 30+ years. Been doing this human-being thing for 40+ years. First and foremost I’m a creative thinker. I appreciate artistry, thinking outside the box and the creative process. I prefer to take the path less traveled. That actually happens sometimes.`,
     author: `@djnatedagreat`,
+    image: `/images/nate.jpg`, // Path to your image you placed in the 'static' folder
+    siteurl: 'http://djnatedagreat.com'
   },
   plugins: [
     {

@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Footer from './footer.js'
+import HeadMeta from './head_meta.js'
 import moment from 'moment';
 const ReactMarkdown = require('react-markdown');
 
@@ -36,10 +37,10 @@ class Post extends React.Component {
   				background_color: '#702632' };
     return(
 	  <div>
-			<Helmet>
-	          <meta charSet="utf-8" />
-	          <title>{this.props.blok.page_title}</title>
-			</Helmet>
+	  	<HeadMeta title={this.props.blok.page_title} />
+	    <Helmet>
+	       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	    </Helmet>
 			<Menu blok={this.props.globalMenu}></Menu>
 			<Feature blok={blok}></Feature>
 			<div className="container pt-5 pb-5">
