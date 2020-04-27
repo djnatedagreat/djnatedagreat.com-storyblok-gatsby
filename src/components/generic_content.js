@@ -18,12 +18,19 @@ function BlockQuoteRenderer({ children }) {
 }
 
 const GenericContent = (props) => {
+	var containerClasses = "col-12";
+	if (props.blok.padding_top) {
+		containerClasses += " pt-" + props.blok.padding_top;
+	} 
+	if (props.blok.padding_bottom) {
+		containerClasses += " pb-" + props.blok.padding_bottom;
+	} 
 	return (
 	  <SbEditable content={props.blok}>
 	    <div className="container pt-4">
 		<div className="row">
-	    	<div className="col-12">
-		<ReactMarkdown source={props.blok.content} renderers={{'blockquote': BlockQuoteRenderer}}/>
+	    	<div className={containerClasses}>
+				<ReactMarkdown source={props.blok.content} renderers={{'blockquote': BlockQuoteRenderer}}/>
 	    	</div>
 		</div>
 	      </div>
