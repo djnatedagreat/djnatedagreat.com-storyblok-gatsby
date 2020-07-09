@@ -24,7 +24,7 @@ const Feature = (props) => {
 	    		<div className="col-12 col-md-6">
 		      		<h1 className="h2">{props.blok.name}</h1>
 		      		<p>{props.blok.text}</p>
-		      		{ props.blok.call_to_action_url &&
+		      		{ props.blok.call_to_action_url && props.blok.call_to_action_url.cached_url &&
 			        <p className="lead">
 			          <Link className="btn btn-primary" to={ '/' + '/' + (props.blok.call_to_action_url.cached_url) }>
 			            {props.blok.call_to_action_label}
