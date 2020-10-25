@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import SbEditable from 'storyblok-react'
 import styled from "styled-components"
-import ("./hero.scss")
+import "./hero.scss"
 
 const Jumbotron = styled.div.attrs(props => ({
   className: "hero hero__Jumbotron jumbotron jumbotron-fluid"

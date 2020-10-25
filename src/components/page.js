@@ -7,15 +7,6 @@ import Footer from './footer.js'
 import HeadMeta from './head_meta.js'
 
 class Page extends React.Component {                                                                             
-   constructor(props) {
-   	//console.log(props.pageContext);
-   	//var globalMenu = Object.assign({}, props.pageContext.globalMenu)
-	//globalMenu.content = JSON.parse(globalMenu.content)
-	//this.state = {
-	//				globalMenu : globalMenu
-    //   		 	};
-	super(props);
-   }
 
   render() {
     return(

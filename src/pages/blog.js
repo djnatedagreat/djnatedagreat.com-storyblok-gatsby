@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Components from '../components/components.js'
-import config from '../../gatsby-config'
-import Menu from '../components/menu.js'
+//import Components from '../components/components.js'
+//import config from '../../gatsby-config'
+//import Menu from '../components/menu.js'
 import Blog from '../components/blog.js'
 import moment from 'moment';
 

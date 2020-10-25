@@ -1,32 +1,14 @@
 import React from 'react'
-import Components from './components.js';
+//import Components from  './components.js';
 import SubscribeWidget from './subscribe_widget.js';
 import Menu from '../components/menu.js'
 import Feature from '../components/feature.js'
 import { Helmet } from "react-helmet"
 import Footer from '../components/footer.js'
-import styled from "styled-components"
 import BlogPostTeaser from "./blog_post_teaser.js"
 
-const Jumbotron = styled.div.attrs(props => ({
-  className: "jumbotron jumbotron-fluid"
-}))`
-	background-image: "none";
-	height:  "inherit";
-	color: #fff;
-	background-color: #702632;
-`;
 
 class Blog extends React.Component {                                                                             
-   constructor(props) {
-   	//console.log(props.pageContext);
-   	//var globalMenu = Object.assign({}, props.pageContext.globalMenu)
-	//globalMenu.content = JSON.parse(globalMenu.content)
-	//this.state = {
-	//				globalMenu : globalMenu
-    //   		 	};
-	super(props);
-   }
 
   render() {
   	let blok = {name: "DJ Nate Da Great's Blog", 

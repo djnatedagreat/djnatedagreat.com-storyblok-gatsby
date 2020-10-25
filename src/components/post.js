@@ -5,13 +5,14 @@ import Feature from '../components/feature.js'
 import SubscribeWidget from '../components/subscribe_widget.js'
 import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
-import styled from "styled-components"
+//import styled from "styled-components"
 import Footer from './footer.js'
 import HeadMeta from './head_meta.js'
 import moment from 'moment';
 const ReactMarkdown = require('react-markdown');
 
 
+/*
 const Jumbotron = styled.div.attrs(props => ({
   className: "jumbotron jumbotron-fluid"
 }))`
@@ -20,16 +21,9 @@ const Jumbotron = styled.div.attrs(props => ({
 	color: #fff;
 	background-color: #702632;
 `;
+*/
 
 class Post extends React.Component {                                                                             
-   constructor(props) {
-   	//var globalMenu = Object.assign({}, props.pageContext.globalMenu)
-	//globalMenu.content = JSON.parse(globalMenu.content)
-	//this.state = {
-	//				globalMenu : globalMenu
-    //   		 	};
-	super(props);
-   }
 
   render() {
   	let blok = {name: this.props.blok.title, 
@@ -49,7 +43,7 @@ class Post extends React.Component {
 		    		<nav aria-label="breadcrumb">
 					  <ol className="breadcrumb">
 					  	<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-					    <li className="breadcrumb-item"><Link to="blog">Blog</Link></li>
+					    <li className="breadcrumb-item"><Link to="/blog">Blog</Link></li>
 					    <li className="breadcrumb-item active" aria-current="page">{this.props.blok.title}</li>
 					  </ol>
 					</nav>

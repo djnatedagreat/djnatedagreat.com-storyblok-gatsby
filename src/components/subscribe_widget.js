@@ -80,7 +80,7 @@ class SubscribeWidget extends React.Component {
 	}	
 
 	componentDidMount() {
-        this.setState({displayCard: (this.state.cookies.get("subscribe_widget_subscribed") || (this.state.cookies.get("subscribe_widget_visible") == "false")) ? false : true});
+        this.setState({displayCard: (this.state.cookies.get("subscribe_widget_subscribed") || (this.state.cookies.get("subscribe_widget_visible") === "false")) ? false : true});
     }
 
    render() { 

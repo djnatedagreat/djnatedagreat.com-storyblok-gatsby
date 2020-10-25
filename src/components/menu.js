@@ -3,13 +3,10 @@ import Components from './components.js';
 
 class Menu extends React.Component {
   
-	constructor(props) {
-      super(props)
-    }
 
   	render() {
       let navClass = "navbar navbar-expand-lg navbar-light bg-light";
-      navClass += (this.props.fixed == 'top') ? ' fixed-top' : '';
+      navClass += (this.props.fixed === 'top') ? ' fixed-top' : '';
 
       return (
             <nav className={ navClass } id="main-menu">

@@ -61,7 +61,7 @@ class ContactForm extends React.Component {
 	  .then(function(response) {
 	     self.setState({showSpinner: false, showErrorMsg: false});
 	     //window.event.preventDefault()
-	     navigate(self.props.blok.thankyou_page.cached_url);
+	     navigate("/"+self.props.blok.thankyou_page.cached_url);
 		  //console.log(self.props.blok.thankyou_page);
 	  })
 	  .catch(function(response) {

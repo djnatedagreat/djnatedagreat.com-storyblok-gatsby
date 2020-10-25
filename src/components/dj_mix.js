@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import SbEditable from 'storyblok-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudDownloadAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
@@ -7,9 +6,6 @@ import { faCloudDownloadAlt, faEllipsisV } from '@fortawesome/free-solid-svg-ico
 var moment = require('moment');
 
 class DjMix extends React.Component {                                                                             
-   constructor(props) {
-	super(props);
-   }
 
   	render() {
 		var dlExpire = moment(this.props.blok.download_expire);
@@ -20,7 +16,7 @@ class DjMix extends React.Component {
 				<div className="row">
 		    		<div className="col-12">
 		    		<h3 className="h5">Listen on Mixcloud</h3>
-		  			<iframe width="100%" className="embed-responsive-item" src={ this.props.blok.mixcloud_url } frameborder="0" ></iframe>
+		  			<iframe title="Mixcloud DJ Mix" width="100%" className="embed-responsive-item" src={ this.props.blok.mixcloud_url } frameborder="0" ></iframe>
 		  			</div>
 				</div>
 				{ moment().add(-1,"days").diff(dlExpire) < 0 &&
