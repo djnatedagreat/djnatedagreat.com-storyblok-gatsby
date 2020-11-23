@@ -65,7 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
 		            path: `/${pagePath}`,
 		            component: storyblokEntry,
 		            context: {
-				    	globalMenu: globalMenu[0].node,
+				    globalMenu: globalMenu[0].node,
 			            story: entry.node
 	   	            }
 			    })

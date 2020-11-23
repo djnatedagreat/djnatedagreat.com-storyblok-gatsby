@@ -44,7 +44,8 @@ module.exports = {
        options: {
           accessToken: '9O6O6sl0fmbOdP3vnOKwiwtt',
           homeSlug: 'home',
-	  version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
+	  version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+	  resolveRelations: ['smartlink.mix', 'post.mixes'],
        }
     },
     {

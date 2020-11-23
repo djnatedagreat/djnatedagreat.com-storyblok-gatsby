@@ -9,6 +9,7 @@ import { Link } from "gatsby"
 import Footer from './footer.js'
 import HeadMeta from './head_meta.js'
 import moment from 'moment';
+import DjMixLinks from './dj_mix_links'
 const ReactMarkdown = require('react-markdown');
 
 
@@ -26,6 +27,8 @@ const Jumbotron = styled.div.attrs(props => ({
 class Post extends React.Component {                                                                             
 
   render() {
+	console.log(this.props.blok.mixes);
+	const mixes = this.props.blok.mixes;
   	let blok = {name: this.props.blok.title, 
   				text: (this.props.blok.subtitle) || "DJ Nate Da Great's Blog",
   				background_color: '#702632' };
@@ -51,6 +54,26 @@ class Post extends React.Component {
 		    		<ReactMarkdown source={this.props.blok.content} />
 		    		</div>
 				</div>
+	    			{ mixes && mixes.map((val, idx) => {
+				  return (
+					<div className="row mt-3">
+		    			<div className="col-12">
+					<h3>
+					  {val.content.name}
+					  <p><small class="text-muted">{val.content.subtitle}</small></p>
+					</h3>
+	    				<DjMixLinks soundcloud={val.content.soundcloud}
+					  	    mixcloud={val.content.mixcloud_url}
+					  	    patreon={val.content.patreon}
+					  	    spotify={val.content.spotify}
+					  	    download={val.content.download_url}
+					  	    download_expire={val.content.download_expire}
+					  	    art={val.content.art}>
+	    				</DjMixLinks>
+		    			</div>
+					</div>
+				   )})
+				}
 				<div className="row">
 		    		<div className="col-12 pl-0 pr-0">
 		      		{this.props.blok.additional_content && this.props.blok.additional_content.map((blok) => React.createElement(Components(blok.component), {key: blok._uid, blok: blok}))}
