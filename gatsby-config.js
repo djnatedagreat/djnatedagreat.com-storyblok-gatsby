@@ -7,6 +7,7 @@ module.exports = {
     siteurl: 'http://djnatedagreat.com'
   },
   plugins: [
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     {
       resolve: `gatsby-plugin-sass`,
       options: {
