@@ -8,7 +8,8 @@ import { Link } from "gatsby"
 //import styled from "styled-components"
 import Footer from './footer.js'
 import HeadMeta from './head_meta.js'
-import moment from 'moment';
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 const ReactMarkdown = require('react-markdown');
 
 
@@ -47,13 +48,16 @@ class Post extends React.Component {
 					    <li className="breadcrumb-item active" aria-current="page">{this.props.blok.title}</li>
 					  </ol>
 					</nav>
-		      		<p><em>Posted {moment(this.props.blok.date_published).format('MMMM Do YYYY')}</em></p>
+		      		<p><em>Posted {format(parseISO(this.props.blok.date_published), 'MMMM do yyyy')}</em></p>
 		    		<ReactMarkdown source={this.props.blok.content} />
 		    		</div>
 				</div>
 				<div className="row">
 		    		<div className="col-12 pl-0 pr-0">
 		      		{this.props.blok.additional_content && this.props.blok.additional_content.map((blok) => React.createElement(Components(blok.component), {key: blok._uid, blok: blok}))}
+		    		</div>
+		    		<div className="col-12 pl-0 pr-0">
+		      		{this.props.blok.mixes && this.props.blok.mixes.map((blok) => React.createElement(Components(blok.content.component), {key: blok.content._uid, blok: blok.content}))}
 		    		</div>
 				</div>
 			</div>

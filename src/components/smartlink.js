@@ -11,7 +11,8 @@ import Styles from "./smartlink.module.css"
 class Smartlink extends React.Component {                                                                             
 
   render() {
-	  console.log(Styles);
+	  console.log("hgello");
+	  console.log(this.props.blok.mix);
     return(
 	  <div>
     <Helmet>
@@ -33,26 +34,26 @@ class Smartlink extends React.Component {
                 <h1 className="h2">{this.props.blok.title}</h1>
                 <h2 className="h4">{this.props.blok.subtitle}</h2>
 	    <div className="list-group list-group-flush">
-	      { this.props.blok.mix[0].soundcloud &&
-	      <Link to={this.props.blok.mix[0].soundcloud} class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
+	      { this.props.blok.mix.content.soundcloud &&
+	      <Link to={this.props.blok.mix.content.soundcloud} class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
 	       Listen on SoundCloud 
 	       <img src={SoundCloudLogoImg} className={`img-fluid ${Styles.smartLinkBrandLogo}`}/>
 	      </Link>
 	      }
-	      { this.props.blok.mix[0].patreon &&
-	      <Link to={this.props.blok.mix[0].patreon} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
+	      { this.props.blok.mix.content.patreon &&
+	      <Link to={this.props.blok.mix.content.patreon} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
 	        Support Me on Patreon
 	    	<img src={PatreonLogoImg} className={`img-fluid ${Styles.smartLinkBrandLogo}`}/>
 	      </Link>
 	      }
-	      { this.props.blok.mix[0].mixcloud_url &&
-	      <Link to={this.props.blok.mix[0].mixcloud_url} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
+	      { this.props.blok.mix.content.mixcloud_url &&
+	      <Link to={this.props.blok.mix.content.mixcloud_url} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
 	    	Listen on MixCloud
 	    	<img src={MixCloudLogoImg} className={`img-fluid ${Styles.smartLinkBrandLogo}`}/>
 	      </Link>
 	      }
-	      { this.props.blok.mix[0].spotify &&
-	      <Link to={this.props.blok.mix[0].spotify} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
+	      { this.props.blok.mix.content.spotify &&
+	      <Link to={this.props.blok.mix.content.spotify} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank">
 	    	Spotify Playlist
 	    	<img src={SpotifyLogoImg} className={`img-fluid ${Styles.smartLinkBrandLogo}`}/>
 	      </Link>

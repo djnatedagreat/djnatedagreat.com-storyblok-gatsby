@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 //import config from '../../gatsby-config'
 //import Menu from '../components/menu.js'
 import Blog from '../components/blog.js'
-import moment from 'moment';
+import parseISO from 'date-fns/parseISO';
 
 
 class BlogPage extends React.Component {
@@ -44,7 +44,7 @@ class BlogPage extends React.Component {
 				return content;
 				//return JSON.parse(post.node.content)
 		}).sort((a,b) => {
-				return  moment(b.date_published) - moment(a.date_published)
+				return  parseISO(b.date_published) - parseISO(a.date_published)
 		})
 
 		return (<div><Blog globalMenu={JSON.parse(globalMenu[0].node.content)} posts={postContents}/></div>)

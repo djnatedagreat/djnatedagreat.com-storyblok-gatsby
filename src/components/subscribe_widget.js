@@ -1,7 +1,6 @@
 import React from 'react';
 import SubscribeForm from './subscribe_form.js';
 import Cookies from 'universal-cookie';
-import moment from 'moment';
 import $ from 'jquery';
 
 
@@ -71,7 +70,9 @@ class SubscribeWidget extends React.Component {
 	}
 
 	hideWidget() {
-		this.state.cookies.set('subscribe_widget_visible', 'false', { path: '/', expires: moment().add(2, 'days').toDate() });
+		var ms = new Date().getTime() + 172800000;
+		var expires = new Date(ms);
+		this.state.cookies.set('subscribe_widget_visible', 'false', { path: '/', expires: expires });
 		this.setState({'displayCard':false});
 	}	
 
