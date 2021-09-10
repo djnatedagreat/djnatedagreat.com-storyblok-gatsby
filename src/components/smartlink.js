@@ -17,7 +17,6 @@ class Smartlink extends React.Component {
 	  <div>
     <Helmet>
        <title>{this.props.blok.head[0].title}</title>
-       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
        <meta property="og:title" content={this.props.blok.head[0].og_title}/>
        <meta property="og:description" content={this.props.blok.head[0].og_description}/>
        <meta property="og:url" content={this.props.blok.head[0].og_url}/>

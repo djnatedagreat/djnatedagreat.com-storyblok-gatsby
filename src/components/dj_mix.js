@@ -1,7 +1,5 @@
 import React from 'react'
 import SbEditable from 'storyblok-react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudDownloadAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 import MixCloudLogoImg from "../images/mixcloud-btn.jpg"
 import SoundCloudLogoImg from "../images/soundcloud-logo.png"
 import PatreonLogoImg from "../images/patreon-logo.png"
@@ -66,8 +64,8 @@ class DjMix extends React.Component {
 					{ (expire_mill > 0) &&
 					<h3 className="h5">Download (Available until {format(dlExpire,"iiii, MMMM do yyyy")})</h3>
 					}
-		  			<a className="btn btn-secondary" href={this.props.blok.download_url} role="button"><FontAwesomeIcon icon={faCloudDownloadAlt} /> Download</a>
-		  			<p className="mt-2"><em>Click <FontAwesomeIcon icon={faEllipsisV} /> on the player for the download.</em></p>
+		  			<a className="btn btn-secondary" href={this.props.blok.download_url} role="button">Download</a>
+		  			<p className="mt-2"><em>Click ...  on the player for the download.</em></p>
 		  			</div>
 				</div>
 				}
