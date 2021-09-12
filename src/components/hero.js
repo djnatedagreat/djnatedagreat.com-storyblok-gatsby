@@ -4,15 +4,29 @@ import SbEditable from 'storyblok-react'
 import styled from "styled-components"
 import "./hero.scss"
 
+function rgx(str0){
+  var reg1 = new RegExp(`a\.storyblok\.com`, 'gi')
+  var reg2 = new RegExp(`\.com\/f\/`, 'gi')
+  return str0.replace(reg1, 'img2.storyblok.com').replace(reg2, '.com/600x0/f/');
+}
+
 const Jumbotron = styled.div.attrs(props => ({
   className: "hero hero__Jumbotron jumbotron jumbotron-fluid"
 }))`
-	background-image: url( ${props => props.media} );
+	/*background-image: url( ${props => props.media} );*/
 	height: ${props => props.type == 'home' ? "95vh" : "inherit"};
 	background-position: center 0;
 	background-size: cover;
 	/*padding-top: 15vh;*/
 	color: #fff;
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+          background-image: url( ${props => props.media ? rgx(props.media) : "none" } );
+        }
+        /* Larger Devices (large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+          background-image: url( ${props => props.media ? props.media : "none" } );
+        }
 `;
 
 const Hero = (props) => {
@@ -44,6 +58,5 @@ const Hero = (props) => {
 	)
 }
 
-	    //<div className="jumbotron jumbotron-fluid" style={{ backgroundImage: props.blok.media }}>
-	    //</div>
+
 export default Hero
